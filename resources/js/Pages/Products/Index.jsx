@@ -10,36 +10,13 @@ const AnimatedHeader = () => {
 
   return (
     <div className="relative text-center py-12 overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-10">
-        <div className="rotate-45 transform scale-150">
-          <div className="grid grid-cols-3 gap-4">
-            {[...Array(9)].map((_, i) => (
-              <div
-                key={i}
-                className="w-8 h-8 rounded-lg transition-all duration-1000"
-                style={{
-                  backgroundColor: i % 2 === 0 ? '#B25A42' : '#533633',
-                  transform: `rotate(${i * 45}deg)`,
-                  opacity: isVisible ? 1 : 0,
-                  transition: `all 1s ease-out ${i * 0.1}s`,
-                }}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Main Title */}
       <div className="relative">
-      <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet" />
 
-        <h1
-          className="text-5xl font-bold mb-2 transition-all duration-1000 transform"
+        <h1 
+          className="text-5xl font-bold mb-2 "
           style={{
             color: '#533633',
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(-20px)',
             fontFamily: 'Itim', 
           }}
         >
