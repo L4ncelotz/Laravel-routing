@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from '@inertiajs/react';
 
-const AnimatedHeader = () => {
+const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -18,38 +18,10 @@ const AnimatedHeader = () => {
           style={{
             color: '#533633',
             fontFamily: 'Itim', 
-          }}
-        >
+          }}>
           บ่แม่นคนสตูลแต่นี้ Store
         </h1>
 
-        {/* Animated Underline */}
-        <div
-          className="h-1 mx-auto transition-all duration-1000 ease-out"
-          style={{
-            width: isVisible ? '180px' : '0px',
-            backgroundColor: '#B25A42',
-            transformOrigin: 'center',
-            transition: 'width 1s ease-out 0.5s',
-            marginTop: '8px',
-          }}
-        />
-
-        {/* Decorative Elements */}
-        <div
-          className="flex justify-center gap-4 mt-4"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'all 1s ease-out 0.7s',
-          }}
-        >
-          {[...Array(3)].map((_, i) => (
-            <div
-              key={i}
-            />
-          ))}
-        </div>
       </div>
     </div>
   );
@@ -59,8 +31,7 @@ export default function Index({ products }) {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#EFCD76' }}>
       <div className="container mx-auto px-4 py-8">
-        {/* Replace the old title with the new animated header */}
-        <AnimatedHeader />
+        <Header />
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {products.map((product) => (
